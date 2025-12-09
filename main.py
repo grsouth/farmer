@@ -1,7 +1,7 @@
 import pumpkin
 
 clear()
-
+do_a_flip()
 
 while True:
 
