@@ -60,18 +60,11 @@ while True:
     # Grass/tree checkerboard row moving West.
     utils.goto(31,8)
     for i in range(32):
-        is_tree = ((get_pos_x() + get_pos_y()) % 2) == 0
         if can_harvest():
             harvest()
-        if get_ground_type() != Grounds.Soil:
-            till()
-        current_entity = get_entity_type()
-        if is_tree:
-            if current_entity != Entities.Tree:
-                plant(Entities.Tree)
-        else:
-            if current_entity != Entities.Grass:
-                plant(Entities.Grass)
+            if get_ground_type() != Grounds.Soil:
+                till()
+            plant(Entities.Carrot)
         if i < 31:
             move(West)
 
